@@ -39,7 +39,29 @@ namespace LogsMonitor.Forms
 
         private void exportToXlsxButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            try
+            {
+                var dateNow = DateTime.Now.ToString("dd/MM/yyyy HH mm ss");
 
+                var saveFileDialog = new SaveFileDialog();
+
+                saveFileDialog.Filter   = ".xlsx Files (*.xlsx)|*.xlsx";
+                saveFileDialog.FileName = $"Logs Report - {dateNow}.xlsx";
+                saveFileDialog.Title    = "Save an Excel File";
+
+                var dialogResult = saveFileDialog.ShowDialog();
+
+                if (dialogResult == DialogResult.OK)
+                {
+                    logsGridView.ExportToXlsx(saveFileDialog.FileName);
+
+                    XtraMessageBox.Show($"Successfully generated logs report to xslx file. Path: {saveFileDialog.FileName}", "Logs Overview - Save to Xlsx file", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show($"Error: {ex}", "Logs Overview - Save to Xlsx file", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void exportToCsvButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
