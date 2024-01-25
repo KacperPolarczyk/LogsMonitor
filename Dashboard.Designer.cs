@@ -1,6 +1,6 @@
 ﻿namespace LogsMonitor
 {
-    partial class dashboard
+    partial class Dashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dashboard));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.productionDatabasePage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.OperationsGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -39,6 +39,7 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.logsOverviewButton = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -49,10 +50,11 @@
             this.ribbonControl.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(45, 44, 45, 44);
             this.ribbonControl.ExpandCollapseItem.Id = 0;
             this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribbonControl.ExpandCollapseItem});
+            this.ribbonControl.ExpandCollapseItem,
+            this.logsOverviewButton});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
             this.ribbonControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ribbonControl.MaxItemId = 1;
+            this.ribbonControl.MaxItemId = 2;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.OptionsMenuMinWidth = 495;
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
@@ -70,6 +72,7 @@
             // 
             // OperationsGroup
             // 
+            this.OperationsGroup.ItemLinks.Add(this.logsOverviewButton);
             this.OperationsGroup.Name = "OperationsGroup";
             this.OperationsGroup.Text = "Operations";
             // 
@@ -105,7 +108,14 @@
             this.documentManager.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
             // 
-            // dashboard
+            // logsOverviewButton
+            // 
+            this.logsOverviewButton.Caption = "Logs Overview";
+            this.logsOverviewButton.Id = 1;
+            this.logsOverviewButton.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("barButtonItem1.ImageOptions.SvgImage")));
+            this.logsOverviewButton.Name = "logsOverviewButton";
+            // 
+            // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -113,7 +123,7 @@
             this.Controls.Add(this.ribbonControl);
             this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Dashboard.IconOptions.SvgImage")));
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "dashboard";
+            this.Name = "Dashboard";
             this.Ribbon = this.ribbonControl;
             this.Text = "Logs Monitor";
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
@@ -135,6 +145,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Docking2010.DocumentManager documentManager;
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
+        private DevExpress.XtraBars.BarButtonItem logsOverviewButton;
     }
 }
 

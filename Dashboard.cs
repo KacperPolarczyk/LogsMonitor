@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace LogsMonitor
 {
-    public partial class dashboard : DevExpress.XtraBars.Ribbon.RibbonForm
+    public partial class Dashboard : DevExpress.XtraBars.Ribbon.RibbonForm
     {
-        public dashboard()
+        public Dashboard()
         {
             InitializeComponent();
         }
