@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery2 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
+            DevExpress.DataAccess.Sql.CustomSqlQuery customSqlQuery1 = new DevExpress.DataAccess.Sql.CustomSqlQuery();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LogsOverview));
             this.logsDb = new DevExpress.DataAccess.Sql.SqlDataSource(this.components);
             this.logsGridView = new DevExpress.XtraGrid.GridControl();
@@ -75,10 +75,10 @@
             // 
             this.logsDb.ConnectionName = "localhost_Logs_Production_Connection";
             this.logsDb.Name = "logsDb";
-            customSqlQuery2.Name = "Query";
-            customSqlQuery2.Sql = resources.GetString("customSqlQuery2.Sql");
+            customSqlQuery1.Name = "Query";
+            customSqlQuery1.Sql = resources.GetString("customSqlQuery1.Sql");
             this.logsDb.Queries.AddRange(new DevExpress.DataAccess.Sql.SqlQuery[] {
-            customSqlQuery2});
+            customSqlQuery1});
             this.logsDb.ResultSchemaSerializable = resources.GetString("logsDb.ResultSchemaSerializable");
             // 
             // logsGridView
@@ -86,10 +86,10 @@
             this.logsGridView.DataMember = "Query";
             this.logsGridView.DataSource = this.logsDb;
             this.logsGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.logsGridView.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
+            this.logsGridView.EmbeddedNavigator.Margin = new System.Windows.Forms.Padding(21, 21, 21, 21);
             this.logsGridView.Location = new System.Drawing.Point(0, 152);
             this.logsGridView.MainView = this.logsView;
-            this.logsGridView.Margin = new System.Windows.Forms.Padding(9, 9, 9, 9);
+            this.logsGridView.Margin = new System.Windows.Forms.Padding(21, 21, 21, 21);
             this.logsGridView.Name = "logsGridView";
             this.logsGridView.Size = new System.Drawing.Size(1428, 616);
             this.logsGridView.TabIndex = 0;
@@ -111,109 +111,111 @@
             this.colDetails,
             this.colAppVersion,
             this.colLoggedUser});
-            this.logsView.DetailHeight = 1180;
+            this.logsView.DetailHeight = 2655;
             this.logsView.GridControl = this.logsGridView;
             this.logsView.Name = "logsView";
-            this.logsView.OptionsEditForm.PopupEditFormWidth = 2700;
+            this.logsView.OptionsEditForm.PopupEditFormWidth = 6075;
             // 
             // colId
             // 
             this.colId.FieldName = "Id";
-            this.colId.MinWidth = 100;
+            this.colId.MinWidth = 225;
             this.colId.Name = "colId";
             this.colId.Visible = true;
             this.colId.VisibleIndex = 0;
-            this.colId.Width = 378;
+            this.colId.Width = 850;
             // 
             // colEventDate
             // 
+            this.colEventDate.DisplayFormat.FormatString = "MM/dd/yyyy HH:mm:ss.fff";
+            this.colEventDate.DisplayFormat.FormatType = DevExpress.Utils.FormatType.DateTime;
             this.colEventDate.FieldName = "EventDate";
-            this.colEventDate.MinWidth = 100;
+            this.colEventDate.MinWidth = 225;
             this.colEventDate.Name = "colEventDate";
             this.colEventDate.Visible = true;
             this.colEventDate.VisibleIndex = 1;
-            this.colEventDate.Width = 378;
+            this.colEventDate.Width = 850;
             // 
             // colApplicationName
             // 
             this.colApplicationName.FieldName = "ApplicationName";
-            this.colApplicationName.MinWidth = 100;
+            this.colApplicationName.MinWidth = 225;
             this.colApplicationName.Name = "colApplicationName";
             this.colApplicationName.Visible = true;
             this.colApplicationName.VisibleIndex = 2;
-            this.colApplicationName.Width = 378;
+            this.colApplicationName.Width = 850;
             // 
             // colServiceName
             // 
             this.colServiceName.FieldName = "ServiceName";
-            this.colServiceName.MinWidth = 100;
+            this.colServiceName.MinWidth = 225;
             this.colServiceName.Name = "colServiceName";
             this.colServiceName.Visible = true;
             this.colServiceName.VisibleIndex = 3;
-            this.colServiceName.Width = 378;
+            this.colServiceName.Width = 850;
             // 
             // colSellerLogin
             // 
             this.colSellerLogin.FieldName = "SellerLogin";
-            this.colSellerLogin.MinWidth = 100;
+            this.colSellerLogin.MinWidth = 225;
             this.colSellerLogin.Name = "colSellerLogin";
             this.colSellerLogin.Visible = true;
             this.colSellerLogin.VisibleIndex = 4;
-            this.colSellerLogin.Width = 378;
+            this.colSellerLogin.Width = 850;
             // 
             // colOperationType
             // 
             this.colOperationType.FieldName = "OperationType";
-            this.colOperationType.MinWidth = 100;
+            this.colOperationType.MinWidth = 225;
             this.colOperationType.Name = "colOperationType";
             this.colOperationType.Visible = true;
             this.colOperationType.VisibleIndex = 5;
-            this.colOperationType.Width = 378;
+            this.colOperationType.Width = 850;
             // 
             // colMessageType
             // 
             this.colMessageType.FieldName = "MessageType";
-            this.colMessageType.MinWidth = 100;
+            this.colMessageType.MinWidth = 225;
             this.colMessageType.Name = "colMessageType";
             this.colMessageType.Visible = true;
             this.colMessageType.VisibleIndex = 6;
-            this.colMessageType.Width = 378;
+            this.colMessageType.Width = 850;
             // 
             // colMessage
             // 
             this.colMessage.FieldName = "Message";
-            this.colMessage.MinWidth = 100;
+            this.colMessage.MinWidth = 225;
             this.colMessage.Name = "colMessage";
             this.colMessage.Visible = true;
             this.colMessage.VisibleIndex = 7;
-            this.colMessage.Width = 378;
+            this.colMessage.Width = 850;
             // 
             // colDetails
             // 
             this.colDetails.FieldName = "Details";
-            this.colDetails.MinWidth = 100;
+            this.colDetails.MinWidth = 225;
             this.colDetails.Name = "colDetails";
             this.colDetails.Visible = true;
             this.colDetails.VisibleIndex = 8;
-            this.colDetails.Width = 378;
+            this.colDetails.Width = 850;
             // 
             // colAppVersion
             // 
             this.colAppVersion.FieldName = "AppVersion";
-            this.colAppVersion.MinWidth = 100;
+            this.colAppVersion.MinWidth = 225;
             this.colAppVersion.Name = "colAppVersion";
             this.colAppVersion.Visible = true;
             this.colAppVersion.VisibleIndex = 9;
-            this.colAppVersion.Width = 378;
+            this.colAppVersion.Width = 850;
             // 
             // colLoggedUser
             // 
             this.colLoggedUser.FieldName = "LoggedUser";
-            this.colLoggedUser.MinWidth = 100;
+            this.colLoggedUser.MinWidth = 225;
             this.colLoggedUser.Name = "colLoggedUser";
             this.colLoggedUser.Visible = true;
             this.colLoggedUser.VisibleIndex = 10;
-            this.colLoggedUser.Width = 378;
+            this.colLoggedUser.Width = 850;
             // 
             // toolbarFormControl1
             // 
