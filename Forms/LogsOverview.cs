@@ -115,5 +115,14 @@ namespace LogsMonitor.Forms
                 this.Text = changeTabNameResult;
             }
         }
+
+        private void logsGridView_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F5)
+            {
+                logsDb.FillAsync();
+                logsView.RefreshData();
+            }
+        }
     }
 }
