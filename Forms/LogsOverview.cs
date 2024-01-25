@@ -66,7 +66,29 @@ namespace LogsMonitor.Forms
 
         private void exportToCsvButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            
+            try
+            {
+                var dateNow = DateTime.Now.ToString("dd/MM/yyyy HH mm ss");
+
+                var saveFileDialog = new SaveFileDialog();
+
+                saveFileDialog.Filter = ".csv Files (*.csv)|*.csv";
+                saveFileDialog.FileName = $"Logs Report - {dateNow}.csv";
+                saveFileDialog.Title = "Save a csv File";
+
+                var dialogResult = saveFileDialog.ShowDialog();
+
+                if (dialogResult == DialogResult.OK)
+                {
+                    logsGridView.ExportToCsv(saveFileDialog.FileName);
+
+                    XtraMessageBox.Show($"Successfully generated logs report to csv file. Path: {saveFileDialog.FileName}", "Logs Overview - Save to csv file", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show($"Error: {ex}", "Logs Overview - Save to csv file", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
         private void findButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
