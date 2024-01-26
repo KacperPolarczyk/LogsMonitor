@@ -1,6 +1,6 @@
 ﻿namespace LogsMonitor
 {
-    partial class dashboard
+    partial class Dashboard
     {
         /// <summary>
         /// Required designer variable.
@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(dashboard));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Dashboard));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.logsOverviewButton = new DevExpress.XtraBars.BarButtonItem();
             this.productionDatabasePage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.OperationsGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.testDatabasePage = new DevExpress.XtraBars.Ribbon.RibbonPage();
@@ -39,6 +40,7 @@
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.documentManager = new DevExpress.XtraBars.Docking2010.DocumentManager(this.components);
             this.tabbedView1 = new DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView(this.components);
+            this.splashScreenManager = new DevExpress.XtraSplashScreen.SplashScreenManager(this, typeof(global::LogsMonitor.Forms.WaitForm), true, true);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.documentManager)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabbedView1)).BeginInit();
@@ -46,20 +48,29 @@
             // 
             // ribbonControl
             // 
-            this.ribbonControl.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(45, 44, 45, 44);
+            this.ribbonControl.EmptyAreaImageOptions.ImagePadding = new System.Windows.Forms.Padding(150, 148, 150, 148);
             this.ribbonControl.ExpandCollapseItem.Id = 0;
             this.ribbonControl.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
-            this.ribbonControl.ExpandCollapseItem});
+            this.ribbonControl.ExpandCollapseItem,
+            this.logsOverviewButton});
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.ribbonControl.MaxItemId = 1;
+            this.ribbonControl.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.ribbonControl.MaxItemId = 2;
             this.ribbonControl.Name = "ribbonControl";
-            this.ribbonControl.OptionsMenuMinWidth = 495;
+            this.ribbonControl.OptionsMenuMinWidth = 1669;
             this.ribbonControl.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.productionDatabasePage,
             this.testDatabasePage,
             this.settingsPage});
             this.ribbonControl.Size = new System.Drawing.Size(1895, 292);
+            // 
+            // logsOverviewButton
+            // 
+            this.logsOverviewButton.Caption = "Logs Overview";
+            this.logsOverviewButton.Id = 1;
+            this.logsOverviewButton.ImageOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("logsOverviewButton.ImageOptions.SvgImage")));
+            this.logsOverviewButton.Name = "logsOverviewButton";
+            this.logsOverviewButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.logsOverviewButton_ItemClick);
             // 
             // productionDatabasePage
             // 
@@ -70,6 +81,7 @@
             // 
             // OperationsGroup
             // 
+            this.OperationsGroup.ItemLinks.Add(this.logsOverviewButton);
             this.OperationsGroup.Name = "OperationsGroup";
             this.OperationsGroup.Text = "Operations";
             // 
@@ -99,21 +111,26 @@
             // 
             // documentManager
             // 
-            this.documentManager.ContainerControl = this;
+            this.documentManager.MdiParent = this;
             this.documentManager.MenuManager = this.ribbonControl;
             this.documentManager.View = this.tabbedView1;
             this.documentManager.ViewCollection.AddRange(new DevExpress.XtraBars.Docking2010.Views.BaseView[] {
             this.tabbedView1});
             // 
-            // dashboard
+            // splashScreenManager
+            // 
+            this.splashScreenManager.ClosingDelay = 500;
+            // 
+            // Dashboard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1895, 917);
             this.Controls.Add(this.ribbonControl);
             this.IconOptions.SvgImage = ((DevExpress.Utils.Svg.SvgImage)(resources.GetObject("Dashboard.IconOptions.SvgImage")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "dashboard";
+            this.IsMdiContainer = true;
+            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Name = "Dashboard";
             this.Ribbon = this.ribbonControl;
             this.Text = "Logs Monitor";
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).EndInit();
@@ -135,6 +152,8 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraBars.Docking2010.DocumentManager documentManager;
         private DevExpress.XtraBars.Docking2010.Views.Tabbed.TabbedView tabbedView1;
+        private DevExpress.XtraBars.BarButtonItem logsOverviewButton;
+        private DevExpress.XtraSplashScreen.SplashScreenManager splashScreenManager;
     }
 }
 
